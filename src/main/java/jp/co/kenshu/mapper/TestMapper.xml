@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- TestMapper.javaと紐付け -->
+<mapper namespace="jp.co.kenshu.mapper.TestMapper">
+
+
+	<!-- resultMapにDBアクセス結果をMapping -->
+
+	<resultMap id="TestResult" type="jp.co.kenshu.entity.Test">
+		<result column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="age" property="age" />
+		<result column="branch" property="branch" />
+	</resultMap>
+
+
+	<!-- TestMapper.javaのgetTestについての記述。取得結果はTestResult -->
+
+	<select id="getTest" resultMap="TestResult" parameterType="int">
+		select id, name, age
+		from test
+		where id = #{id}
+	</select>
+
+	<!-- 登録 -->
+	<insert id="insertTest">
+		insert into test(name,age,branch) values (#{name},#{age},#{branch})
+	</insert>
+
+	<!-- 削除 -->
+	<delete id="deleteTest" parameterType="int">
+	delete from test where id = #{id}
+	</delete>
+
+	<!-- 更新 -->
+	<update id="updateTest">
+	update test set name = #{name},age = #{age}, branch = #{branch} where id = #{id}
+	</update>
+
+
+	<!-- DBから全ての情報を取得する -->
+	<select id="getTestAll" resultMap="TestResult" parameterType="int">
+		select *
+		from test;
+	</select>
+</mapper>

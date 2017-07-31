@@ -1,0 +1,11 @@
+jp\co\kenshu\dto\TestDto.class
+jp\co\kenshu\dto\EmployeeDto.class
+jp\co\kenshu\form\CheckForm.class
+jp\co\kenshu\form\EmployeeListForm.class
+jp\co\kenshu\controller\ValidationSampleController.class
+jp\co\kenshu\service\TestService.class
+jp\co\kenshu\controller\TestController.class
+jp\co\kenshu\controller\CheckSampleController.class
+jp\co\kenshu\entity\Test.class
+jp\co\kenshu\mapper\TestMapper.class
+jp\co\kenshu\form\TestForm.class
